@@ -11,6 +11,7 @@ public class Part2 {
         int sizeRandArr = GetInt();
         createRandomArray(sizeRandArr);
         arrSum(inputArray());
+        biggestNum(inputArray());
     }
 
     public static int[] inputArray() //1. Input Array Method
@@ -62,7 +63,17 @@ public class Part2 {
     //5. Largest value in an array
     public static int biggestNum(int[] inputArray)
     {
-        for
+        int a = inputArray.length - 1;
+        for(int i = 0; i < a;)
+        {
+            if(inputArray[i] > inputArray[i+1])
+            {
+                    inputArray[i+1] = inputArray[i];
+            }
+            i++;
+        }
+        System.out.println("Biggest number in this array is: " + inputArray[a]);
+        return a;
     }
     public static int GetInt() //method to get users input as an int
     {
